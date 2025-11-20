@@ -10,3 +10,6 @@ make >> "$PackageDir/logs/asterisk.log" 2>&1 && \
 make install >> "$PackageDir/logs/asterisk.log" 2>&1 && \
 make config >> "$PackageDir/logs/asterisk.log" 2>&1 && \
 make samples >> "$PackageDir/logs/asterisk.log" 2>&1
+
+
+https://files.pythonhosted.org/packages/4a/9a/42c1a187a171807a6b214060544fbd6f4bf4a33bf1428aabaa46befed9dc/pyst2-0.5.1-py3-none-any.whl
