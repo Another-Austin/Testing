@@ -1,0 +1,12 @@
+./configure --with-externals-cache="$PackageDir/src" --with-jansson-bundled >> "$PackageDir/logs/asterisk.log" 2>&1 && \
+make menuselect.makeopts >> "$PackageDir/logs/asterisk.log" 2>&1 && \
+menuselect/menuselect --enable format_mp3 >> "$PackageDir/logs/asterisk.log" 2>&1 && \
+make >> "$PackageDir/logs/asterisk.log" 2>&1 && \
+(
+  sh contrib/scripts/get_mp3_source.sh >> "$PackageDir/logs/asterisk.log" 2>&1
+  ec=$?
+  [ "$ec" -eq 0 ] || [ "$ec" -eq 1 ]
+) && \
+make install >> "$PackageDir/logs/asterisk.log" 2>&1 && \
+make config >> "$PackageDir/logs/asterisk.log" 2>&1 && \
+make samples >> "$PackageDir/logs/asterisk.log" 2>&1
